@@ -12,7 +12,9 @@ Ruby 2.5.0 Rails5.2.1
 
 ・機能一覧
 ■ログイン機能
+
 ■ユーザー登録機能
+
 　　■メールアドレス、名前、パスワード必須
 ■パスワード再設定機能
 ■ユーザーアイコン設定機能
@@ -54,4 +56,3 @@ https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/815E5
   better_errors
   binding_of_caller
   letter_opner_web
-  
