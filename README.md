@@ -11,48 +11,79 @@ TENKIHUKU
 Ruby 2.5.0 Rails5.2.1
 
 ・機能一覧
+
 ■ログイン機能
 
 ■ユーザー登録機能
 
 　　■メールアドレス、名前、パスワード必須
+
 ■パスワード再設定機能
+
 ■ユーザーアイコン設定機能
+
 ■天気表示機能
+
 ■天気に合わせた洋服表示機能
+
 ■天気服投稿機能
+
 　　■洋服の画像は必須
+
 ■天鼓服編集機能
+
 ■天気服削除機能
+
 　　■天気服の編集と削除は投稿者のみ実行可
+
 ■天気服お気に入り機能
+
 　　■ブログのお気に入りについては1つの天気服に対して1人1回しかできない
+
 　　■自分自身の天気服にはお気に入りできない
+
 ■天気服詳細機能
+
 　　■天気服の投稿者、天気、お気に入りの数
+
 ■ユーザー詳細機能
+
 　　■ユーザーが今まで投稿した天気服一覧を見ることができる
+
 ■マイページ画面
+
 　　■お気に入り一覧、自分が投稿した天気服を見ることができる
 
 ・カタログ設計
+
 https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
 
 ・テーブル設計
+
 https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
 
 ・画面遷移図
+
 https://cacoo.com/diagrams/SakObkokAjq42Lhb/12449
 
 ・画面ワイヤーフレーム
+
 https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/815E5
 
 ・使用予定gem
+
   carriewave
+
   mini_magic
+
   device
+
   kaminari
-  pry-rsils
+
+  pry-rails
+
   better_errors
+
   binding_of_caller
+  
   letter_opner_web
