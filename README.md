@@ -24,6 +24,8 @@ Ruby 2.5.0 Rails5.2.1
 
 ■天気表示機能
 
+　　■Darksky　API　を使って天気を表示
+
 ■天気に合わせた洋服表示機能
 
 ■天気服投稿機能
@@ -54,13 +56,25 @@ Ruby 2.5.0 Rails5.2.1
 
 　　■お気に入り一覧、自分が投稿した天気服を見ることができる
 
+■ページネーション機能
+
+　　■お気に入り一覧、ユーザー詳細機能の今まで投稿した天気服一覧、自分が今まで投稿した天気服一覧に実装
+
+■フォロー機能
+
+　　コーディネートの好みが似ている人をフォローできる
+
+■カレンダー機能
+
+　　■カレンダーAPIを使用
+
 ・カタログ設計
 
 https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
 
 ・テーブル設計
 
-https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1JAZ6Dn4UF3UTucrZy9aJUwUDfroDqkjysTtlwE_7I0w/edit?usp=sharing
 
 ・画面遷移図
 
@@ -85,5 +99,5 @@ https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/815E5
   better_errors
 
   binding_of_caller
-  
+
   letter_opner_web
