@@ -66,12 +66,11 @@ Ruby 2.5.0 Rails5.2.1
 
 ■カレンダー機能
 
-　　■カレンダーAPIを使用
+　　■カレンダーAPIを使用→マイページにて使用
 
 ・カタログ設計
 
 https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
-
 ・テーブル設計
 
 https://docs.google.com/spreadsheets/d/1JAZ6Dn4UF3UTucrZy9aJUwUDfroDqkjysTtlwE_7I0w/edit?usp=sharing
