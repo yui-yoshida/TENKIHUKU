@@ -81,7 +81,7 @@ https://cacoo.com/diagrams/SakObkokAjq42Lhb/12449
 
 ・画面ワイヤーフレーム
 
-https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/815E5
+https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/7357B
 
 ・使用予定gem
 
