@@ -1,13 +1,16 @@
 TENKIHUKU
 
 ・概要
+
 その日の天気に合わせてみんながどのような洋服を着ていたかがわかるので、お出かけをしてから服装に失敗した！ということをなくせます。
 自分のコーディネートを写真で残しておくことにより、自分がいつ・何を着ていたかを思い出すことができます。
 
 ・コンセプト
+
 今日の天気によりどのような洋服を着ていくかが分かる
 
 ・バージョン
+
 Ruby 2.5.0 Rails5.2.1
 
 ・機能一覧
@@ -71,6 +74,7 @@ Ruby 2.5.0 Rails5.2.1
 ・カタログ設計
 
 https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
+
 ・テーブル設計
 
 https://docs.google.com/spreadsheets/d/1JAZ6Dn4UF3UTucrZy9aJUwUDfroDqkjysTtlwE_7I0w/edit?usp=sharing
@@ -98,7 +102,7 @@ https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/19F68
 
   mini_magic
 
-  device
+  devise
 
   kaminari
 
