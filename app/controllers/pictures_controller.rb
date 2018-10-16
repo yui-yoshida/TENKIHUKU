@@ -11,8 +11,13 @@ before_action :authenticate_user!
   end
 
   def create
-    Picture.create(picture_params)
-    redirect_to pictures_path
+    @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
+    if @picture.save
+      redirect_to pictures_path,notice: "TENKIHUKUを作成しました"
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -23,7 +28,7 @@ before_action :authenticate_user!
   end
 
   def show
-
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def edit
@@ -46,6 +51,7 @@ before_action :authenticate_user!
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
 
