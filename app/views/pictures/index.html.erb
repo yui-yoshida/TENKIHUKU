@@ -1,0 +1,9 @@
+<h1>TENKIHUKU一覧</h1>
+
+<% @pictures.each do |picture| %>
+  <li><%= image_tag picture.image.url %></li>
+  <li><%= picture.content %></li>
+  <li><%= link_to "詳細" , picture_path(picture.id) %></li>
+<% end %>
+
+<%= link_to '新しくTENKIHUKUを投稿する', new_picture_path %>
