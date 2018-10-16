@@ -2,6 +2,7 @@
   <div class="TENKIHUKU_image">
     <%= form.label :image %>
     <%= image_tag(@picture.image.url) if @picture.image.url %>
+    <br>
     <%= form.file_field :image %>
   </div>
   <div class="TENKIHUKU_content">
