@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, :only => [:show]
   root 'pictures#index'
   resources :pictures do
     collection do

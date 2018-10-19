@@ -5,11 +5,13 @@
 
 <% unless @picture.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to '💔', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
   <% else %>
-    <%= link_to '❤️', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %>
+    <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
 
 <%= link_to '編集', edit_picture_path(@picture.id) %>
 <%= link_to '削除', picture_path(@picture.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %>
+
+<%= link_to 'TENKIHUKU一覧へ', pictures_path %>
