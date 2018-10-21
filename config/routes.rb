@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   devise_for :users
   resources :users, :only => [:show]
   root 'pictures#index'
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
