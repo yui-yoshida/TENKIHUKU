@@ -11,6 +11,7 @@
   <% end %>
 <% end %>
 
+<%= link_to @picture.user.name, user_path(@picture.user_id) %>
 <%= link_to '編集', edit_picture_path(@picture.id) %>
 <%= link_to '削除', picture_path(@picture.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %>
 

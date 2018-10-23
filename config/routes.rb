@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   get 'relationships/destroy'
 
   devise_for :users
-  resources :users, :only => [:show]
-  get "users/followers/:id", to: "users#followers"
-  get "users/following/:id", to: "users#following"
+  resources :users, :only => [:show] do
+    member do
+      get :following, :followers
+    end
+  end
+
   root 'pictures#index'
 
   resources :pictures do

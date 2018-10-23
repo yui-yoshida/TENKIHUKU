@@ -3,3 +3,5 @@
 <% @users.each do |user| %>
   <li><%= user.name %></li>
 <% end %>
+
+<%= link_to @user.name, user_path(@user.id) %>
