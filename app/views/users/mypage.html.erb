@@ -1,0 +1,5 @@
+<h1><%= @user.name %>さんのマイページ</h1>
+
+<%= link_to "お気に入り一覧へ" , favorite_user_path(@user) %><br>
+<%= link_to 'フォロー一覧へ', following_user_path(@user) %><br>
+<%= link_to 'フォロワー一覧へ', followers_user_path(@user) %>

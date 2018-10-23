@@ -12,4 +12,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers
   end
+
+  def mypage
+    @user = current_user
+  end
+
+  def favorite
+    @user = current_user
+  end
 end
