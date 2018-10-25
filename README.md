@@ -1,19 +1,19 @@
-<h1>TENKIHUKU</h1>
+#TENKIHUKU
 
-<h2>概要</h2>
+##概要
 
 その日の天気に合わせてみんながどのような洋服を着ていたかがわかるので、お出かけをしてから服装に失敗した！ということをなくせます。
 自分のコーディネートを写真で残しておくことにより、自分がいつ・何を着ていたかを思い出すことができます。
 
-<h2>コンセプト</h2>
+##コンセプト
 
 今日の天気によりどのような洋服を着ていくかが分かる
 
-<h2>バージョン</h2>
+##バージョン
 
 Ruby 2.5.0 Rails5.2.1
 
-<h2>機能一覧</h2>
+##機能一覧
 
 ■ログイン機能
 
@@ -71,19 +71,19 @@ Ruby 2.5.0 Rails5.2.1
 
 　　■カレンダーAPIを使用→マイページにて使用
 
-<h2>カタログ設計</h2>
+##カタログ設計
 
 https://docs.google.com/spreadsheets/d/1GzsUBZPGpZ_za4dC0l3pdQXdxTAZeDksYUAHc04VV54/edit?usp=sharing
 
-<h2>テーブル設計</h2>
+##テーブル設計
 
 https://docs.google.com/spreadsheets/d/1JAZ6Dn4UF3UTucrZy9aJUwUDfroDqkjysTtlwE_7I0w/edit?usp=sharing
 
-<h2>画面遷移図</h2>
+##画面遷移図
 
 https://cacoo.com/diagrams/SakObkokAjq42Lhb/12449
 
-<h2>画面ワイヤーフレーム</h2>
+##画面ワイヤーフレーム
 
 https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/815E5
 
@@ -96,7 +96,7 @@ https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/61D4C
 https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/19F68
 
 
-<h2>使用予定gem</h2>
+##使用予定gem
 
   carriewave
 
