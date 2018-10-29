@@ -20,5 +20,6 @@ class UsersController < ApplicationController
 
   def favorite
     @user = current_user
+    @pictures = @user.favorite_pictures
   end
 end

@@ -6,4 +6,5 @@
 
 <% @pictures.each do |picture| %>
   <li><%= image_tag picture.image.url %></li>
+  <li><%= picture.content %></li>
 <% end %>
