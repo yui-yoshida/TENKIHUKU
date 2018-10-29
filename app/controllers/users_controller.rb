@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def mypage
     @user = current_user
+    @pictures = @user.pictures
   end
 
   def favorite

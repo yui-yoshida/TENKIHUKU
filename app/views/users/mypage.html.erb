@@ -4,4 +4,6 @@
 <%= link_to 'フォロー一覧へ', following_user_path(@user) %><br>
 <%= link_to 'フォロワー一覧へ', followers_user_path(@user) %>
 
-<% @pictures.each do ||
+<% @pictures.each do |picture| %>
+  <li><%= image_tag picture.image.url %></li>
+<% end %>

@@ -11,7 +11,7 @@
 
   <body>
     <% if user_signed_in? %>
-      <%= link_to "TENKIHUKU投稿", pictures_path %>
+      <%= link_to "TENKIHUKU一覧", pictures_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "マイページ", mypage_user_path(current_user) %>
     <% else %>

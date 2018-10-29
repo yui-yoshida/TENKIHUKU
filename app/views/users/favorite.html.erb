@@ -1,1 +1,5 @@
 <h1><%= @user.name %>さんのお気に入り一覧</h1>
+
+<% @pictures.each do |picture| %>
+  <li><%= image_tag picture.image.url %></li>
+<% end %>
