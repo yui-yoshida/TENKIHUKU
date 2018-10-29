@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'tops#top'
   get 'relationships/create'
   get 'relationships/destroy'
 
@@ -8,8 +9,6 @@ Rails.application.routes.draw do
       get :following, :followers, :mypage, :favorite
     end
   end
-
-  root 'pictures#index'
 
   resources :pictures do
     collection do
