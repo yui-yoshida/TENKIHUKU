@@ -7,3 +7,8 @@
 <%= link_to 'TENKIHUKU一覧へ', picture_path %><br>
 <%= link_to 'フォロー一覧へ', following_user_path(@user) %><br>
 <%= link_to 'フォロワー一覧へ', followers_user_path(@user) %>
+
+<% @pictures.each do |picture| %>
+  <li><%= image_tag picture.image.url %></li>
+  <li><%= picture.content %></li>
+<% end %>
