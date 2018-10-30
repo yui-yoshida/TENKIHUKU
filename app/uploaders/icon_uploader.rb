@@ -1,7 +1,7 @@
 class IconUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   storage :file
-  process :resize_to_limit => [120, 120, "Center"]
+  process :resize_to_limit => [80, 80]
 
 
   def store_dir
