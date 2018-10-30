@@ -8,6 +8,8 @@
 <%= link_to 'フォロー一覧へ', following_user_path(@user) %><br>
 <%= link_to 'フォロワー一覧へ', followers_user_path(@user) %>
 
+<h2><%= @user.name %>さんのTENKIHUKU一覧</h2>
+
 <% @pictures.each do |picture| %>
   <li><%= image_tag picture.image.url %></li>
   <li><%= picture.content %></li>

@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     mypage_user_path(current_user)
   end
 
+  def after_update_path_for(resource)
+    mypage_user_path(current_user)
+  end
+
   private
 
     def sign_in_required

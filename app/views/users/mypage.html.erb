@@ -1,4 +1,4 @@
-<h1><%= @user.name %>さんのマイページ</h1>
+<h1>マイページ</h1>
 
   <%= image_tag @user.icon.url %>
 
@@ -7,6 +7,8 @@
 <%= link_to 'フォロー一覧へ', following_user_path(@user) %><br>
 <%= link_to 'フォロワー一覧へ', followers_user_path(@user) %><br>
 <%= link_to "ユーザー情報編集画面へ", edit_user_registration_path %>
+
+<h2>あなたのTENKIHUKU一覧</h2>
 
 <% @pictures.each do |picture| %>
   <li><%= image_tag picture.image.url %></li>

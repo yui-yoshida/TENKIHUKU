@@ -1,7 +1,8 @@
 <h1><%= current_user.name %>さんのフォロー一覧</h1>
 
 <% @users.each do |user| %>
-  <li><%= user.name %></li>
+  <li><%= image_tag user.icon.url %></li>
+  <li><%= link_to user.name, user_path(user.id) %></li>
 <% end %>
 
 <%= link_to @user.name, user_path(@user.id) %>
