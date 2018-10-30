@@ -11,9 +11,15 @@
     <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+<% if @picture.user.id == current_user.id %>
+  <%= link_to "マイページ", mypage_user_path(current_user) %>
+<% else %>
+  <%= link_to @picture.user.name, user_path(@picture.user_id) %>
+<% end %>
 
-<%= link_to @picture.user.name, user_path(@picture.user_id) %>
-<%= link_to '編集', edit_picture_path(@picture.id) %>
-<%= link_to '削除', picture_path(@picture.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %>
+<% if @picture.user.id == current_user.id %>
+  <%= link_to '編集', edit_picture_path(@picture.id) %>
+  <%= link_to '削除', picture_path(@picture.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %>
+<% end %>
 
 <%= link_to 'TENKIHUKU一覧へ', pictures_path %>

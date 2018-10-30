@@ -25,4 +25,13 @@ class UsersController < ApplicationController
     @user = current_user
     @pictures = @user.favorite_pictures
   end
+
+  private
+
+  def user_check
+    @user = User.find(params[:id])
+    unless current_user == @user
+      redirect_to pictures_path, notice:"投稿者以外は編集できません"
+    end
+  end
 end

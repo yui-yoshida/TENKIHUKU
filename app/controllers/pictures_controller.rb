@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
 before_action :set_picture, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!, :only => [:new, :create, :edit, :show, :update, :destroy, :confirm]
+before_action :user_check, only: [:edit, :destroy]
 
 
   def new
@@ -61,6 +62,13 @@ before_action :authenticate_user!, :only => [:new, :create, :edit, :show, :updat
 
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+
+  def user_check
+    @picture = Picture.find(params[:id])
+    unless current_user.id == @picture.user_id
+      redirect_to pictures_path, notice:"投稿者以外は編集できません"
+    end
   end
 
 end
