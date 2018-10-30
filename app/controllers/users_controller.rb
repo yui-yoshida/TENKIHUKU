@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, :only => [:show, :following, :followerd, :mypage, :favorite]
+
   def show
     @user = User.find(params[:id])
     @pictures = @user.pictures

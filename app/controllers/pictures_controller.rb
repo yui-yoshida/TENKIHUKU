@@ -1,5 +1,7 @@
 class PicturesController < ApplicationController
 before_action :set_picture, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, :only => [:new, :create, :edit, :show, :update, :destroy, :confirm]
+
 
   def new
     if params[:back]
@@ -30,9 +32,6 @@ before_action :set_picture, only: [:show, :edit, :update, :destroy]
     @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
-  def edit
-
-  end
 
   def update
 
