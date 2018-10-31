@@ -26,7 +26,7 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.order(created_at: :desc)
   end
 
   def show
