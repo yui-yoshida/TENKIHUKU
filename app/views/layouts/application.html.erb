@@ -7,9 +7,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
     <header>
       <%= link_to image_tag("/assets/logo.png"), root_path %>
       <% if user_signed_in? %>
@@ -17,11 +14,13 @@
         <%= link_to "マイページ", mypage_user_path(current_user), class:"square_btn" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"square_btn" %>
       <% else %>
-        <%= link_to "新規登録", new_user_registration_path %>
-        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "新規登録", new_user_registration_path, class:"square_btn" %>
+        <%= link_to "ログイン", new_user_session_path, class:"square_btn" %>
       <% end %>
     </header>
+  </head>
 
+  <body>
     <% if notice %>
     <p class="alert alert-notice"><%= notice %></p>
   <% end %>

@@ -4,9 +4,6 @@ class User < ApplicationRecord
   has_many :favorite_pictures, through: :favorites, source: :picture
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
   has_many :active_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
   has_many :passive_relationships, foreign_key: 'followed_id', class_name: 'Relationship', dependent: :destroy
 
@@ -16,6 +13,15 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   mount_uploader :icon, IconUploader
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+
+  after_create :notify_new_record
+
+  def notify_new_record
+    NewuserMailer.hello(self).deliver_now
+  end
 
   def follow!(other_user)
     active_relationships.create!(followed_id: other_user.id)
