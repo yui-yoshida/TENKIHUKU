@@ -10,14 +10,17 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "TENKIHUKU一覧", pictures_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "マイページ", mypage_user_path(current_user) %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
+    <header>
+      <%= link_to image_tag("/assets/logo.png"), root_path %>
+      <% if user_signed_in? %>
+        <%= link_to "一覧", pictures_path, class:"square_btn" %>
+        <%= link_to "マイページ", mypage_user_path(current_user), class:"square_btn" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"square_btn" %>
+      <% else %>
+        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "ログイン", new_user_session_path %>
+      <% end %>
+    </header>
 
     <% if notice %>
     <p class="alert alert-notice"><%= notice %></p>
@@ -28,4 +31,9 @@
 
     <%= yield %>
   </body>
+
+  <footer>
+    <%= link_to image_tag("/assets/logo.png"), root_path %>
+    <p>© 2015-2018 Copyright Yoppi Corp.</p>
+  </footer>
 </html>
