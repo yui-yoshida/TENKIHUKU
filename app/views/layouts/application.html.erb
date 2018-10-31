@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <header>
-      <%= link_to image_tag("/assets/logo.png"), root_path %>
+      <%= link_to image_tag("/assets/logo.png"), root_path , class:"logo" %>
       <% if user_signed_in? %>
         <%= link_to "一覧", pictures_path, class:"square_btn" %>
         <%= link_to "投稿する", new_picture_path, class:"square_btn" %>

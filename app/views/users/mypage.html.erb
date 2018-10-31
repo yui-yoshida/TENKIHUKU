@@ -1,6 +1,6 @@
 <h1>マイページ</h1>
 
-  <%= image_tag @user.icon.url %>
+<%= image_tag @user.icon.url, class:"icon" %>
 
 <br>
 <%= link_to "お気に入り一覧へ" , favorite_user_path(@user) %><br>
@@ -11,8 +11,8 @@
 <h2>あなたのTENKIHUKU一覧</h2>
 
 <% @pictures.each do |picture| %>
-  <li><%= image_tag picture.image.url %></li>
-  <li><%= picture.content %></li>
+  <%= link_to image_tag(picture.image.url), picture_path(picture.id) %>
+  <%= picture.content %>
 <% end %>
 
 <script src ="https://api.darksky.net/forecast/b0207e10b3cfa549c07daf016400ada2/35.681167,139.767052"></script>

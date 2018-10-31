@@ -1,7 +1,6 @@
 <h1><%= @user.name %>さんのお気に入り一覧</h1>
 
 <% @pictures.each do |picture| %>
-  <li><%= image_tag picture.image.url %></li>
-  <li><%= picture.content %></li>
-  <li><%= link_to "詳細" , picture_path(picture.id) %></li>
+  <%= link_to image_tag(picture.image.url), picture_path(picture.id) %>
+  <%= picture.content %>
 <% end %>

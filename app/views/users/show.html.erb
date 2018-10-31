@@ -11,7 +11,7 @@
 <h2><%= @user.name %>さんのTENKIHUKU一覧</h2>
 
 <% @pictures.each do |picture| %>
-  <li><%= image_tag picture.image.url %></li>
-  <li><%= picture.content %></li>
-  <li><%= link_to "詳細" , picture_path(picture.id) %></li>
+  <%= image_tag picture.image.url %>
+  <%= picture.content %>
+  <%= link_to "詳細" , picture_path(picture.id) %>
 <% end %>

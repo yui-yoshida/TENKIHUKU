@@ -1,8 +1,9 @@
+<div class = "center">
 <h1>TENKIHUKU一覧</h1>
-<div class = "pictures">
   <% @pictures.each do |picture| %>
       <%= link_to image_tag(picture.image.url) ,picture_path(picture.id) %><br>
       <%= picture.content%><br>
   <% end %>
-</div>
+
 <%= link_to 'TENKIHUKUを投稿する', new_picture_path %>
+</div>
