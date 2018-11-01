@@ -34,9 +34,4 @@ class UsersController < ApplicationController
       redirect_to pictures_path, notice:"投稿者以外は編集できません"
     end
   end
-
-  # def notify_new_record
-  #   NewuserMailer.hello(self).deliver_now
-  # end
-
 end

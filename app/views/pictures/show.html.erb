@@ -1,14 +1,15 @@
 <div class = "center">
 <h1 class = "title">TENKIHUKU詳細</h1>
 
-<div class = "container">
-  <%= image_tag @picture.user.icon.url, class: "icon" %></p>
+<div class = "container users">
+  <div class = "user icon_between"><%= image_tag @picture.user.icon.url, class: "icon" %></div>
   <% if @picture.user.id == current_user.id %>
-    <%= link_to "マイページ", mypage_user_path(current_user) %>
+    <h3 class = "user"><%= link_to "マイページ", mypage_user_path(current_user) %></h3>
   <% else %>
-    <%= link_to @picture.user.name, user_path(@picture.user_id) %>
+    <h3 class = "user"><%= link_to @picture.user.name, user_path(@picture.user_id) %></h3>
   <% end %>
 </div>
+<br>
 <p><%= image_tag @picture.image.url %></p>
 <p><%= @picture.content %></p>
 

@@ -26,7 +26,8 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def index
-    @pictures = Picture.all.order(created_at: :desc)
+    @pictures = Picture.all
+    @pictures = Picture.page(params[:page]).per(15).order('created_at DESC')
   end
 
   def show
