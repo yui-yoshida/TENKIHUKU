@@ -4,7 +4,11 @@
 <div class = "users">
 <% @users.each do |user| %>
   <div class = "user icon_between"><%= image_tag user.icon.url, class:"icon" %></div>
-  <h3 class = "user"><%= link_to user.name, user_path(user.id) %></h3>
+  <% if user == current_user %>
+    <h4 class = "user"><%= link_to user.name, mypage_user_path(current_user) %></h4>
+  <% else %>
+    <h4 class = "user"><%= link_to user.name, user_path(user.id) %></h4>
+  <% end %>
 <% end %>
 </div>
 <br><br>

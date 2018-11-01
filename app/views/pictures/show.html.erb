@@ -4,9 +4,9 @@
 <div class = "container users">
   <div class = "user icon_between"><%= image_tag @picture.user.icon.url, class: "icon" %></div>
   <% if @picture.user.id == current_user.id %>
-    <h3 class = "user"><%= link_to "マイページ", mypage_user_path(current_user) %></h3>
+    <h4 class = "user"><%= link_to current_user.name, mypage_user_path(current_user) %></h4>
   <% else %>
-    <h3 class = "user"><%= link_to @picture.user.name, user_path(@picture.user_id) %></h3>
+    <h4 class = "user"><%= link_to @picture.user.name, user_path(@picture.user_id) %></h4>
   <% end %>
 </div>
 <br>

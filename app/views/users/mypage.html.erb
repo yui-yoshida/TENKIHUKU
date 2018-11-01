@@ -23,6 +23,8 @@
       <%= link_to "お気に入り一覧" , favorite_user_path(@user) ,class:"white_button" %><br>
       <%= link_to "ユーザー情報編集", edit_user_registration_path ,class:"white_button" %>
     </div>
+
+    <div id="calendar"></div>
   <h3>あなたのTENKIHUKU一覧</h3>
 
     <% @pictures.each do |picture| %>
