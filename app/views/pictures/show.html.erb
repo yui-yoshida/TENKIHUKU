@@ -1,8 +1,8 @@
 <div class = "center">
-<h1>TENKIHUKU詳細画面</h1>
+<h1 class = "title">TENKIHUKU詳細</h1>
 
 <div class = "container">
-  <p class = "icon"><%= link_to image_tag(@picture.user.icon.url),user_path(@picture.user_id) %></p>
+  <%= image_tag @picture.user.icon.url, class: "icon" %></p>
   <% if @picture.user.id == current_user.id %>
     <%= link_to "マイページ", mypage_user_path(current_user) %>
   <% else %>
@@ -27,5 +27,5 @@
 
 <br>
 <br>
-<%= link_to 'TENKIHUKU一覧へ', pictures_path %>
+<%= link_to 'TENKIHUKU一覧へ', pictures_path ,class:"button_while" %>
 </div>

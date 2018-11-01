@@ -1,8 +1,16 @@
-<h1><%= current_user.name %>さんのフォロー一覧</h1>
+<div class = "center">
+<h1 class = "title"><%= current_user.name %>さんのフォロー一覧</h1>
 
+<div class = "users">
 <% @users.each do |user| %>
-  <li><%= image_tag user.icon.url %></li>
-  <li><%= link_to user.name, user_path(user.id) %></li>
+  <div class = "user icon_between"><%= image_tag user.icon.url, class:"icon" %></div>
+  <h3 class = "user"><%= link_to user.name, user_path(user.id) %></h3>
 <% end %>
-
-<%= link_to @user.name, user_path(@user.id) %>
+</div>
+<br><br>
+<% if @user == current_user %>
+  <%= link_to "もどる", mypage_user_path(current_user) , class:"button_while"%>
+<% else %>
+  <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
+<%end %>
+</div>

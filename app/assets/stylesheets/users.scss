@@ -2,5 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .icon{
-  border-radius: 50px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.button_while {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 12px 0 8px;
+    text-decoration: none !important;
+    color: #00008b;
+    transition: .4s;
+}
+
+.button_while:before{
+   position: absolute;
+   content: '';
+   width: 100%;
+   height: 4px;
+   top:100%;
+   left: 0;
+   border-radius: 3px;
+   background:#00008b;
+   transition: .2s;
+}
+
+.button_while:after{
+   position: absolute;
+   content: '';
+   width: 100%;
+   height: 4px;
+   top:0;
+   left: 0;
+   border-radius: 3px;
+   background:#00008b;
+   transition: .2s;
+}
+
+.button_while:hover:before {
+    top: -webkit-calc(100% - 3px);
+    top: calc(100% - 3px);
+}
+
+.button_while:hover:after {
+    top: 3px;
+}
+
+.title {
+  border-bottom: 1px dotted #00008b
+}
+
+.users {
+  display: flex;
+  justify-content: center;
+}
+
+.icon_between {
+  padding-right: 20px;
 }

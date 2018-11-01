@@ -5,7 +5,26 @@
   text-align: center;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
+// .container {
+//   display: flex;
+//   align-content: space-between;
+//   flex-wrap: wrap;
+// }
+
+.image_file {
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+
+.thumbnail {
+    display: inline-block;
+    height: 300px;
+    weight: 300px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.thumbnail img {
+    height: 100%;
+    weight: 100%;
 }

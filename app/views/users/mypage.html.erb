@@ -1,21 +1,38 @@
-<h1>マイページ</h1>
+<div class = "center">
+<h1 class = "title"><%= @user.name %>さんのマイページ</h1>
 
 <%= image_tag @user.icon.url, class:"icon" %>
 
 <br>
 <%= link_to "お気に入り一覧へ" , favorite_user_path(@user) %><br>
-<%= link_to 'フォロー一覧へ', following_user_path(@user) %><br>
-<%= link_to 'フォロワー一覧へ', followers_user_path(@user) %><br>
+
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    フォロー
+  </a>
+  <a href="<%= followers_user_path(@user) %>">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    フォロワー
+  </a>
+</div>
 <%= link_to "ユーザー情報編集画面へ", edit_user_registration_path %>
 
 <h2>あなたのTENKIHUKU一覧</h2>
 
 <% @pictures.each do |picture| %>
-  <%= link_to image_tag(picture.image.url), picture_path(picture.id) %>
-  <%= picture.content %>
+  <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br>
 <% end %>
 
 <script src ="https://api.darksky.net/forecast/b0207e10b3cfa549c07daf016400ada2/35.681167,139.767052"></script>
 <script>
   console.log("体感温度:${apparentTemperature}℃")
 </script>
+<br>
+<%= link_to 'TENKIHUKU一覧へ', picture_path , class:"button_while" %><br>
+</div>
