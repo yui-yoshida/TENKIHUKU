@@ -51,7 +51,7 @@
 }
 
 .title {
-  border-bottom: 1px dotted #00008b
+  border-bottom: 1px dotted #00008b;
 }
 
 .users {
@@ -61,4 +61,19 @@
 
 .icon_between {
   padding-right: 20px;
+}
+
+.white_button {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none !important;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.white_button:hover {
+    background: #67c5ff;
+    color: white;
 }
