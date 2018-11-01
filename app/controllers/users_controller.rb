@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # after_create :notify_new_record
   def show
     @user = User.find(params[:id])
-    @pictures = @user.pictures
+    @pictures = @user.pictures.page(params[:page]).per(20).order('created_at DESC')
   end
 
   def following
@@ -18,12 +18,12 @@ class UsersController < ApplicationController
 
   def mypage
     @user = current_user
-    @pictures = @user.pictures
+    @pictures = @user.pictures.page(params[:page]).per(20).order('created_at DESC')
   end
 
   def favorite
     @user = current_user
-    @pictures = @user.favorite_pictures
+    @pictures = @user.favorite_pictures.page(params[:page]).per(20).order('created_at DESC')
   end
 
   private
