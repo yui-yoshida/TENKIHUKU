@@ -13,6 +13,8 @@
 <p><%= image_tag @picture.image.url %></p>
 <p><%= @picture.content %></p>
 
+<%= "投稿日：#{@picture.created_at.strftime('%Y/%m/%d')}" %>
+<br>
 <% unless @picture.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'white_button' %>
@@ -20,7 +22,7 @@
     <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post, class: 'white_button' %>
   <% end %>
 <% end %>
-<%= @picture.created_at.strftime('%Y/%m/%d') %>
+<br>
 <% if @picture.user.id == current_user.id %>
   <%= link_to '編集', edit_picture_path(@picture.id) %>
   <%= link_to '削除', picture_path(@picture.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %>
