@@ -17,8 +17,3 @@
 //= require moment
 //= require fullcalendar
 //= require_tree .
-
-$(document).ready(function(){
-  $('#calendar').fullCalendar({
-  })
-});
