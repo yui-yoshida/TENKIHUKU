@@ -57,6 +57,8 @@
 .users {
   display: flex;
   justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
 }
 
 .icon_between {

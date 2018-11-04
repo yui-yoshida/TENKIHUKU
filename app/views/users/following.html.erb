@@ -1,16 +1,18 @@
 <div class = "center">
 <h1 class = "title"><%= current_user.name %>さんのフォロー一覧</h1>
 
-<div class = "users">
+
 <% @users.each do |user| %>
+<div class = "users">
   <div class = "user icon_between"><%= image_tag user.icon.url, class:"icon" %></div>
   <% if user == current_user %>
-    <h4 class = "user"><%= link_to user.name, mypage_user_path(current_user) %></h4>
+    <h4 class = "user"><%= link_to user.name, mypage_user_path(current_user) %></h4><br>
   <% else %>
-    <h4 class = "user"><%= link_to user.name, user_path(user.id) %></h4>
+    <h4 class = "user"><%= link_to user.name, user_path(user.id) %></h4><br>
   <% end %>
-<% end %>
 </div>
+<% end %>
+
 <br><br>
 <% if @user == current_user %>
   <%= link_to "もどる", mypage_user_path(current_user) , class:"button_while"%>

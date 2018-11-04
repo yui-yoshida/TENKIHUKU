@@ -73,3 +73,7 @@ https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/19F68
   better_errors
 
   binding_of_caller
+
+  momentjs-rails
+
+  fullcalendar-rails
