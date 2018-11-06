@@ -58,7 +58,7 @@ before_action :user_check, only: [:edit, :destroy]
   private
 
   def picture_params
-    params.require(:picture).permit(:content, :image, :image_cache)
+    params.require(:picture).permit(:content, :image, :image_cache, :start_time)
   end
 
   def set_picture

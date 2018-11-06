@@ -6,6 +6,7 @@
   <%= image_tag(@picture.image.url) %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :start_time %>
     <p><%= @picture.content %></p>
   <%= form.submit "投稿する" %>
 <% end %>
@@ -13,6 +14,7 @@
 <%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :start_time %>
   <%= form.submit "戻る", name: "back" %>
 <% end %>
 

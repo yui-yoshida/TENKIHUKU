@@ -3,7 +3,8 @@
 <div class = "container">
   <% @pictures.each do |picture| %>
     <div class="panel-body">
-      <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %><br><br>
+      <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %>
+      <br>
     </div>
   <% end %>
 <%= paginate @pictures %>

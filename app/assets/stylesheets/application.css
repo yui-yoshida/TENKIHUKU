@@ -12,6 +12,7 @@
  *
  *= require bootstrap/dist/css/bootstrap.min
  *= require fullcalendar
+ *= require simple_calendar
  *= require_tree .
  *= require_self
  */
