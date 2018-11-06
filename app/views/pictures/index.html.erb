@@ -1,14 +1,15 @@
 <div class = "center">
   <h1 class = "title">今日のTENKIHUKU</h1>
   <div class = "container">
+
     <% @pictures.each do |picture| %>
-    <div class="panel-body">
+      <% if current_user.gender == picture.user.gender %>
       <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %>
       <br>
-     <% end %>
-    </div>
-    <%= paginate @pictures %>
+      <% end %>
+    <% end %>
   </div>
+  <%= paginate @pictures %>
   <br>
   <%= link_to 'TENKIHUKUを投稿する', new_picture_path,class:"button_while" %>
 </div>
