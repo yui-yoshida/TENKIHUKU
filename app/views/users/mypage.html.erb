@@ -24,36 +24,25 @@
       <%= link_to "ユーザー情報編集", edit_user_registration_path ,class:"white_button" %>
     </div>
 
-
-
-
-
-
-
-
     <%= month_calendar events: @pictures do |date, pictures| %>
       <%= date.day %>
       <% pictures.each do |picture| %>
-    <div>
-      <%= link_to "TENKIHUKU", picture_path(picture.id) %>
-    </div>
+      <div>
+        <%= link_to "TENKIHUKU", picture_path(picture.id) %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 
+  <h3>あなたのTENKIHUKU一覧</h3>
 
-
-
-
-      <h3>あなたのTENKIHUKU一覧</h3>
-
-      <% @pictures.each do |picture| %>
-        <div class="panel-body">
-          <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br>
-        </div>
+  <% @pictures.each do |picture| %>
+    <div class="panel-body">
+      <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br>
+    </div>
       <% end %>
-      <%= paginate @pictures %>
+    <%= paginate @pictures %>
 
       <script src ="https://api.darksky.net/forecast/b0207e10b3cfa549c07daf016400ada2/35.681167,139.767052"></script>
 
-      <%= link_to 'TENKIHUKU一覧へ', picture_path , class:"button_while" %><br>
+  <%= link_to 'TENKIHUKU一覧へ', picture_path , class:"button_while" %><br>
 </div>

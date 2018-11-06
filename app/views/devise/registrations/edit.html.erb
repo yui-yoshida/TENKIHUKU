@@ -15,6 +15,14 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.label :man %>
+    <%= f.radio_button :gender, :man %>
+    <%= f.label :woman %>
+    <%= f.radio_button :gender, :woman %>
+  </div>
+
   <div class="field image_file">
     <%= f.label :icon %><br />
     <%= f.file_field :icon %>

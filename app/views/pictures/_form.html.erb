@@ -3,10 +3,9 @@
     <div id="error_explanation">
       <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
       <ul>
-
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -22,8 +21,9 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+
   <div class="time">
-    <%= form.label :start_time %>
+    <%= form.label :start_time , class:"white"%>
     <%= form.hidden_field :start_time %>
   </div>
 

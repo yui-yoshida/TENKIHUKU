@@ -30,7 +30,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'momentjs-rails'
-gem 'fullcalendar-rails'
 gem 'jquery-rails'
 gem 'simple_calendar'
 

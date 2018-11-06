@@ -14,7 +14,7 @@
     <header>
       <%= link_to image_tag("/assets/logo.png"), root_path , class:"logo" %>
       <% if user_signed_in? %>
-        <%= link_to "一覧", pictures_path, class:"square_btn" %>
+        <%= link_to "今日の天気", pictures_path, class:"square_btn" %>
         <%= link_to "投稿する", new_picture_path, class:"square_btn" %>
         <%= link_to "マイページ", mypage_user_path(current_user), class:"square_btn" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"square_btn" %>

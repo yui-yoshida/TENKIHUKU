@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  enum gender: { man:1, woman:2 }
+
   mount_uploader :icon, IconUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
