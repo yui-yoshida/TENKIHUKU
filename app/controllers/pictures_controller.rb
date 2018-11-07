@@ -13,8 +13,11 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def create
-    @picture = Picture.new(picture_params)
-    @picture.user_id = current_user.id
+    prefecture = Prefecture.find(current_user.prefecture_code.to_s)
+    apparent_temperature = prefecture.current_temperature
+    @picture = current_user.pictures.build(picture_params)
+    @picture.setting_weather_status(apparent_temperature)
+
     if @picture.save
       redirect_to pictures_path,notice: "TENKIHUKUを作成しました"
     else
@@ -26,7 +29,6 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def index
-
     @pref = current_user.prefecture_code.to_s
     @lat = Prefecture.find(@pref).lat.to_s
     @long = Prefecture.find(@pref).long.to_s
