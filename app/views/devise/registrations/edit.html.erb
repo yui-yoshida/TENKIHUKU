@@ -23,6 +23,11 @@
     <%= f.radio_button :gender, :woman %>
   </div>
 
+  <div class = "field">
+    <%= f.label :prefecture %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
+  </div>
+
   <div class="field image_file">
     <%= f.label :icon %><br />
     <%= f.file_field :icon %>

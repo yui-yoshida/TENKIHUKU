@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require 'jp_prefecture'
 
   has_many :pictures
   has_many :favorites, dependent: :destroy
@@ -14,6 +15,9 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   enum gender: { man:1, woman:2 }
+  include JpPrefecture
+  jp_prefecture :prefecture
+  # enum prefecture: { JpPrefecture::Prefecture.all }
 
   mount_uploader :icon, IconUploader
   devise :database_authenticatable, :registerable,
