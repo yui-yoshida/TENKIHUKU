@@ -54,9 +54,9 @@ header ul:after {
 }
 
 .square_btn:hover{
-  -webkit-transform: rotateY(360deg);
-  -ms-transform: rotateY(360deg);
-  transform: rotateY(360deg);
+  -webkit-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  transform: rotateX(360deg);
 }
 
 .logo {

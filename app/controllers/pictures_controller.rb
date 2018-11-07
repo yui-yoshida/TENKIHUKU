@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
 before_action :set_picture, only: [:show, :edit, :update, :destroy]
-before_action :authenticate_user!, :only => [:new, :create, :edit, :show, :update, :destroy, :confirm]
+before_action :authenticate_user!, :only => [:new, :create, :edit, :show, :update, :destroy, :confirm, :index]
 before_action :user_check, only: [:edit, :destroy]
 
 
@@ -26,6 +26,7 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def index
+    @weather = ForecastIO.forecast(34,134, params: {units: 'si'})['currently']['icon']
     @pictures = Picture.all
     @pictures = Picture.page(params[:page]).per(20).order('created_at DESC')
   end

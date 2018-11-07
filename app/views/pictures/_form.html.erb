@@ -19,12 +19,12 @@
   </div>
   <div class="TENKIHUKU_content">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content,:placeholder => "空欄でもOKです!" %>
   </div>
 
   <div class="time">
     <%= form.label :start_time , class:"white"%>
-    <%= form.hidden_field :start_time %>
+    <%= form.date_select :start_time %>
   </div>
 
   <%= form.submit "投稿する" %>
