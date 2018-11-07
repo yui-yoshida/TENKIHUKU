@@ -13,16 +13,19 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
   validates :name, presence: true
+  validates :email, presence: true
+  validates :gender, presence: true
+  validates :prefecture_code, presence: true
+  validates :icon, presence: true
 
   enum gender: { man:1, woman:2 }
+
   include JpPrefecture
   jp_prefecture :prefecture
-  # enum prefecture: { JpPrefecture::Prefecture.all }
 
   mount_uploader :icon, IconUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
 
   after_create :notify_new_record
 
