@@ -34,7 +34,7 @@ gem 'jquery-rails'
 gem 'simple_calendar'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'forecast_io'
-
+gem 'jp_prefecture'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
