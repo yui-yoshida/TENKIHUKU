@@ -35,6 +35,7 @@ gem 'simple_calendar'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'forecast_io'
 gem 'jp_prefecture'
+gem 'rails-i18n', '~> 5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
