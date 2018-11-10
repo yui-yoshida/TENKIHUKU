@@ -8,7 +8,15 @@
 
     <br>
     <% @pictures.each do |picture| %>
-      <% if current_user.gender == picture.user.gender %>
+        <% case @apparent_temperature %>
+        <% when (26..Float::INFINITY) then @current_temperature = 1 %>
+        <% when (21..25) then @current_temperature = 2 %>
+        <% when (16..20) then @current_temperature = 3 %>
+        <% when (12..15) then @current_temperature = 4 %>
+        <% when (7..11) then @current_temperature = 5 %>
+        <% else picture.weather = 6 %>
+        <% end %>
+        <% if current_user.gender == picture.user.gender && @current_temperature == picture.weather %>
       <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %><br>
       <br>
       <% end %>

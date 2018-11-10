@@ -35,6 +35,7 @@ before_action :user_check, only: [:edit, :destroy]
     @weather = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']['icon']
     @temperature_high = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']['tempertureHigh']
     @apparent_temperature = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['currently']['apparentTemperature']
+    # @current_temperature = setting_current_temperature(@apparent_temperature)
     @pictures = Picture.all
     @pictures = Picture.page(params[:page]).per(20).order('created_at DESC')
   end
