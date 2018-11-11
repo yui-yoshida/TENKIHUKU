@@ -33,7 +33,7 @@ before_action :user_check, only: [:edit, :destroy]
     @lat = Prefecture.find(@pref).lat.to_s
     @long = Prefecture.find(@pref).long.to_s
     @weather = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']['icon']
-    @temperature_high = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']['tempertureHigh']
+    @temperature_high = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']["sunsetTime"]
     @apparent_temperature = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['currently']['apparentTemperature']
     # @current_temperature = setting_current_temperature(@apparent_temperature)
     @pictures = Picture.all
