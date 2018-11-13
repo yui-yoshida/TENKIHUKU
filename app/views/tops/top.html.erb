@@ -2,15 +2,17 @@
   <br><br>
 
   <div class = "image_center"><img src ="/assets/fashion_01.png" class = "top_image"></div>
-  <br>
+  <br><br><br><br>
   <h4>今日は暑いのかな？寒いのかな？</h4>
   <h4>天気予報だけだと何を着たらいいのかが分からない</h4>
   <h4>そんな時はTENKIHUKUを見ればすぐにわかります！</h4>
   <h4>また、今日の服装を投稿することにより洋服の日記にもなるので、</h4>
   <h4>過去に自分がどのようなコーディネートをしていたかもすぐに知ることができます！</h4>
-  <br>
-<% unless user_signed_in? %>
-    <%= link_to "新規登録", new_user_registration_path ,class:"button_while" %>
-    <%= link_to "ログイン", new_user_session_path,class:"button_while" %>
-  <% end %>
+  <br><br>
+  <div class = "top_button">
+    <% unless user_signed_in? %>
+      <h3 class = "right_between"><%= link_to "新規登録", new_user_registration_path ,class:"button_while" %></h3>
+      <h3><%= link_to "ログイン", new_user_session_path,class:"button_while" %></h3>
+    <% end %>
+  </div>
 </div>
