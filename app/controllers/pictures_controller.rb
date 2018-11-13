@@ -29,13 +29,10 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def index
-    @pref = current_user.prefecture_code.to_s
-    @lat = Prefecture.find(@pref).lat.to_s
-    @long = Prefecture.find(@pref).long.to_s
-    @weather = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']['icon']
-    @temperature_high = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['daily']["sunsetTime"]
-    @apparent_temperature = ForecastIO.forecast(@lat, @long, params: {units: 'si'})['currently']['apparentTemperature']
-    # @current_temperature = setting_current_temperature(@apparent_temperature)
+    prefecture = Prefecture.find(current_user.prefecture_code.to_s)
+    @apparent_temperature = prefecture.current_temperature
+    @weather = prefecture.today_weather
+    # @temperature_high = prefecture.today_temperature_high
     @pictures = Picture.all
     @pictures = Picture.page(params[:page]).per(20).order('created_at DESC')
   end
