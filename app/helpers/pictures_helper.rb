@@ -7,24 +7,16 @@ module PicturesHelper
     end
   end
 
-  # def weather_icon(@weather)
-  #   weather = @weather
-  #   if @weather == "clear-day" || @reather == "clear-night"
-  #     image_tag "clear-day.jpeg"
-  #   elsif weather == "rain"
-  #       image_tag "rain.jpeg"
-  #   elsif  weather == "snow"
-  #     image_tag "snow.jpeg"
-  #   elsif  weather == "sleed"
-  #       image_tag "sleed.jpeg"
-  #   elsif  weather == "wind"
-  #      image_tag "wind.jpeg"
-  #   elsif  weather == "fog"
-  #      image_tag "fog.jpeg"
-  #   elsif  weather == "cloudy"
-  #      image_tag "cloudy.jpeg"
-  #   else
-  #      image_tag "sunny_cloudy.jpeg"
-  #   end
-  # end
+  def weather_icon(weather)
+    case weather
+      when "clear-day" || "clear-night" then image_tag "clear-day.jpeg"
+      when "rain" then image_tag "rain.jpeg"
+      when "snow" then image_tag "snow.jpeg"
+      when "sleed" then image_tag "sleed.jpeg"
+      when "wind" then image_tag "wind.jpeg"
+      when "fog" then image_tag "fog.jpeg"
+      when "cloudy" then image_tag "cloudy.jpeg"
+      else image_tag "sunny_cloudy.jpeg"
+    end
+  end
 end
