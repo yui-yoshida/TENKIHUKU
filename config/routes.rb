@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root 'tops#top'
-  get 'relationships/create'
-  get 'relationships/destroy'
 
   devise_for :users
   resources :users, :only => [:show] do

@@ -9,16 +9,15 @@
           <strong id="following" class="stat">
             <%= @user.following.count %>
           </strong>
-                 フォロー
+            フォロー
           </a>
           <a href="<%= followers_user_path(@user) %>">
             <strong id="followers" class="stat">
               <%= @user.followers.count %>
             </strong>
-            フォロワー
+              フォロワー
           </a>
         </div>
-
 
       <% unless @user == current_user %>
         <%= render "follow_form"%>
@@ -26,15 +25,13 @@
     </div>
     <br>
 
-
-      <h3><%= @user.name %>さんのTENKIHUKU一覧</h3>
-
-      <% @pictures.each do |picture| %>
-      <div class="panel-body">
-        <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br>
-      </div>
-      <% end %>
-      <%= paginate @pictures %>
-      <br>
-      <%= link_to '今日の天気へ', pictures_path , class:"button_while" %><br>
+    <h3><%= @user.name %>さんのTENKIHUKU一覧</h3>
+    <% @pictures.each do |picture| %>
+    <div class="panel-body">
+      <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br>
+    </div>
+    <% end %>
+    <%= paginate @pictures %>
+    <br>
+    <%= link_to '今日の天気へ', pictures_path , class:"button_while" %><br>
 </div>

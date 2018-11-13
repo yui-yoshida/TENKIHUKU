@@ -1,5 +1,5 @@
 <div class = "center">
-  <h1 class = "title"><%= current_user.name %>さんのフォロワー一覧</h1>
+  <h1 class = "title"><%= @user.name %>さんのフォロワー一覧</h1>
   <% @users.each do |user| %>
   <div class = "users">
     <div class = "user icon_between"><%= image_tag user.icon.url, class:"icon" %></div>
