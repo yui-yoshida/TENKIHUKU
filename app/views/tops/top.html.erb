@@ -9,6 +9,8 @@
   <h4>また、今日の服装を投稿することにより洋服の日記にもなるので、</h4>
   <h4>過去に自分がどのようなコーディネートをしていたかもすぐに知ることができます！</h4>
   <br>
-  <%= link_to "新規登録", new_user_registration_path ,class:"button_while" %>
-  <%= link_to "ログイン", new_user_session_path,class:"button_while" %>
+<% unless user_signed_in? %>
+    <%= link_to "新規登録", new_user_registration_path ,class:"button_while" %>
+    <%= link_to "ログイン", new_user_session_path,class:"button_while" %>
+  <% end %>
 </div>
