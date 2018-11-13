@@ -19,4 +19,14 @@ module PicturesHelper
       else image_tag "sunny_cloudy.jpeg"
     end
   end
+  def current_pictures(apparent_temperature)
+    case apparent_temperature
+      when (26..Float::INFINITY) then @current_temperature = 1
+      when (21..25) then @current_temperature = 2
+      when (16..20) then @current_temperature = 3
+      when (12..15) then @current_temperature = 4
+      when (7..11) then @current_temperature = 5
+      else picture.weather = 6
+    end
+  end
 end
