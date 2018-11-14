@@ -7,6 +7,7 @@
     <h3><%= @weather %></h3>
     <%= @temperature_high %>
     <p>体感気温：<%= @apparent_temperature %></p>
+    <%= weather_description(@apparent_temperature) %>
 
     <h2 class = "title">今日のTENKIIHUKU一覧</h2>
     <% @pictures.each do |picture| %>

@@ -197,8 +197,6 @@ ja:
       last_word_connector: 、
       two_words_connector: 、
       words_connector: 、
-  weather:
-    rain: 雨
   time:
     am: 午前
     formats:

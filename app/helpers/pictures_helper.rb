@@ -19,6 +19,18 @@ module PicturesHelper
       else image_tag "sunny_cloudy.jpeg"
     end
   end
+
+  def weather_description(apparent_temperature)
+    case apparent_temperature
+    when (26..Float::INFINITY) then @weather_description = "暑い！まだまだ半袖が活躍"
+    when (21..25) then @weather_description = "快適！半袖と長袖の分かれ目"
+    when (16..20) then @weather_description = "やや肌寒い！重ね着が楽しめる時期"
+      when (12..15) then @weather_description = "寒さがじわじわ。そろそろ冬支度を始めましょう。"
+      when (7..11) then @weather_description = "もう寒い！そろそろ冬本番"
+      else @weather_description = "凍える寒さ！防寒対策は万全に"
+    end
+  end
+
   def current_pictures(apparent_temperature)
     case apparent_temperature
       when (26..Float::INFINITY) then @current_temperature = 1
