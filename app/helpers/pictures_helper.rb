@@ -38,7 +38,7 @@ module PicturesHelper
       when (16..20) then @current_temperature = 3
       when (12..15) then @current_temperature = 4
       when (7..11) then @current_temperature = 5
-      else picture.weather = 6
+      else @current_temperature = 6
     end
   end
 end
