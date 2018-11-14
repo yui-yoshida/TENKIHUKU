@@ -13,10 +13,10 @@ class Picture < ApplicationRecord
   def setting_weather_status(temperature)
     case temperature
     when (26..Float::INFINITY) then self.weather = 1
-    when (21..25) then self.weather = 2
-    when (16..20) then self.weather = 3
-    when (12..15) then self.weather = 4
-    when (7..11) then self.weather = 5
+    when (21..25.99) then self.weather = 2
+    when (16..20.99) then self.weather = 3
+    when (12..15.99) then self.weather = 4
+    when (7..11.99) then self.weather = 5
     else self.weather = 6
     end
   end
