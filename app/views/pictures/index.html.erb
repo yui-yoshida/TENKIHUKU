@@ -12,10 +12,11 @@
     <h2 class = "title">今日のTENKIIHUKU一覧</h2>
     <% @pictures.each do |picture| %>
     <% current_pictures(@apparent_temperature) %>
-    <%= @weather_content %>
       <% if current_user.gender == picture.user.gender && @current_temperature == picture.weather %>
-        <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %><br>
+      <div class="panel-body">
+        <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %>
         <br>
+      </div>
       <% end %>
     <% end %>
   </div>

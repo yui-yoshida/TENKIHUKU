@@ -1,13 +1,13 @@
 <div class = "center">
 
-<h2>新規登録</h2>
+<h2 class = "title">新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name ,:placeholder => "10文字以内"%>
   </div>
 
   <div class="field">
