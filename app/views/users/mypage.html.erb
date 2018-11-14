@@ -7,25 +7,24 @@
           <a href="<%= following_user_path(@user) %>">
           <strong id="following" class="stat">
             <%= @user.following.count %>
-          </strong>
-            フォロー
+          </strong>フォロー
           </a>
           <a href="<%= followers_user_path(@user) %>">
           <strong id="followers" class="stat">
             <%= @user.followers.count %>
-          </strong>
-             フォロワー
+          </strong>フォロワー
           </a>
         </div>
     </div>
     <br>
     <div class = "users">
-      <%= link_to "お気に入り一覧" , favorite_user_path(@user) ,class:"white_button" %><br>
+      <%= link_to "お気に入り一覧" , favorite_user_path(@user) ,class:"white_button" %>
       <%= link_to "ユーザー情報編集", edit_user_registration_path ,class:"white_button" %>
     </div>
     <!-- カレンダー表示 -->
     <%= month_calendar events: @pictures do |date, pictures| %>
       <%= date.day %>
+
       <% pictures.each do |picture| %>
         <div>
           <%= link_to "TENKIHUKU", picture_path(picture.id) %>

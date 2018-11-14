@@ -21,6 +21,10 @@ class Picture < ApplicationRecord
     end
   end
 
+  def setting_start_time
+    self.start_time = Date.today
+  end
+
   # def setting_current_temperature(temperature)
   #   case temperature
   #   when (26..Float::INFINITY) then @current_temperature = 1

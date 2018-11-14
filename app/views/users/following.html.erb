@@ -13,10 +13,11 @@
   </div>
   <% end %>
 
-  <br><br>
-  <% if @user == current_user %>
-    <%= link_to "もどる", mypage_user_path(current_user) , class:"button_while"%>
-  <% else %>
-    <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
-  <%end %>
+  <div class = "button-top-padding">
+    <% if @user == current_user %>
+      <%= link_to "もどる", mypage_user_path(current_user) , class:"button_while"%>
+    <% else %>
+      <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
+    <%end %>
+  </div>
 </div>

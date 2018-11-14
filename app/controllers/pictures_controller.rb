@@ -17,7 +17,7 @@ before_action :user_check, only: [:edit, :destroy]
     apparent_temperature = prefecture.current_temperature
     @picture = current_user.pictures.build(picture_params)
     @picture.setting_weather_status(apparent_temperature)
-
+    @picture.setting_start_time
     if @picture.save
       redirect_to pictures_path,notice: "TENKIHUKUを作成しました"
     else
@@ -29,9 +29,9 @@ before_action :user_check, only: [:edit, :destroy]
   end
 
   def index
-    prefecture = Prefecture.find(current_user.prefecture_code.to_s)
-    @apparent_temperature = prefecture.current_temperature
-    @weather = prefecture.today_weather
+    @prefecture = Prefecture.find(current_user.prefecture_code.to_s)
+    @apparent_temperature = @prefecture.current_temperature
+    @weather = @prefecture.today_weather
     # @temperature_high = prefecture.today_temperature_high
     @pictures = Picture.all
     @pictures = Picture.page(params[:page]).per(20).order('created_at DESC')

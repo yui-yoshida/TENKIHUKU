@@ -1,20 +1,20 @@
 <div class = "center">
   <h1 class = "title"><%= @user.name %>さんのフォロワー一覧</h1>
   <% @users.each do |user| %>
-  <div class = "users">
-    <div class = "user icon_between"><%= image_tag user.icon.url, class:"icon" %></div>
-    <% if user == current_user %>
-      <h4 class = "user"><%= link_to user.name, mypage_user_path(current_user) %></h4><br>
-    <% else %>
-      <h4 class = "user"><%= link_to user.name, user_path(user.id) %></h4><br>
-    <% end %>
-  </div>
+    <div class = "users">
+      <div class = "user icon_between"><%= image_tag user.icon.url, class:"icon" %></div>
+      <% if user == current_user %>
+        <h4 class = "user"><%= link_to user.name, mypage_user_path(current_user) %></h4><br>
+      <% else %>
+        <h4 class = "user"><%= link_to user.name, user_path(user.id) %></h4><br>
+      <% end %>
+    </div>
   <% end %>
-
-  <br><br>
+  <div class = "button-top-padding">
   <% if @user == current_user %>
-    <%= link_to "もどる", mypage_user_path(current_user) , class:"button_while"%>
-  <% else %>
-    <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
-  <%end %>
+      <%= link_to "もどる", mypage_user_path(current_user) , class:"button_while"%>
+    <% else %>
+      <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
+    <%end %>
+  </div>
 </div>
