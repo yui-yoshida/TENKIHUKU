@@ -7,9 +7,9 @@
     </div>
   <% end %>
   <% if @user == current_user %>
-  <%= link_to "マイページへ", mypage_user_path(current_user) , class:"button_while"%>
-<% else %>
-  <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
-<%end %>
-<%= paginate @pictures %>
+    <%= link_to "マイページへ", mypage_user_path(current_user) , class:"button_while"%>
+  <% else %>
+    <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
+  <%end %>
+  <%= paginate @pictures %>
 </div>

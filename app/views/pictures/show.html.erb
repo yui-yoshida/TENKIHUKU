@@ -11,8 +11,7 @@
       <h4 class = "user"><%= link_to @picture.user.name, user_path(@picture.user_id) %></h4>
     <% end %>
   </div>
-  <br>
-  <p><%= image_tag @picture.image.url %></p>
+  <p class = "button-top-padding"><%= image_tag @picture.image.url %></p>
   <p><%= @picture.content %></p>
   <p><%= "投稿日：#{@picture.created_at.strftime('%Y/%m/%d')}" %></p>
   <% unless @picture.user_id == current_user.id %>
@@ -26,8 +25,8 @@
     <%= link_to '編集', edit_picture_path(@picture.id) %>
     <%= link_to '削除', picture_path(@picture.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %>
   <% end %>
-
   <br>
-  <br>
-  <%= link_to '今日の天気へ', pictures_path ,class:"button_while" %>
+  <div class = "button-top-padding">
+    <%= link_to '今日の天気へ', pictures_path ,class:"button_while" %>
+  </div>
 </div>
