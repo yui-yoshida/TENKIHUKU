@@ -33,12 +33,12 @@ module PicturesHelper
 
   def current_pictures(apparent_temperature)
     case apparent_temperature
-      when (26..Float::INFINITY) then @current_temperature = 1
-      when (21..25.99) then @current_temperature = 2
-      when (16..20.99) then @current_temperature = 3
-      when (12..15.99) then @current_temperature = 4
-      when (7..11.99) then @current_temperature = 5
-      else @current_temperature = 6
+    when (26..Float::INFINITY) then @current_temperature = 1
+    when (21..25.99) then @current_temperature = 2
+    when (16..20.99) then @current_temperature = 3
+    when (12..15.99) then @current_temperature = 4
+    when (7..11.99) then @current_temperature = 5
+    else @current_temperature = 6
     end
   end
 end

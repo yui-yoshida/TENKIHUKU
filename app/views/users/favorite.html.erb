@@ -3,13 +3,13 @@
 
   <% @pictures.each do |picture| %>
     <div class="panel-body">
-      <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br><br>
+      <%= link_to image_tag(picture.image.url), picture_path(picture.id) %><br>
     </div>
   <% end %>
   <% if @user == current_user %>
-    <%= link_to "マイページへ", mypage_user_path(current_user) , class:"button_while"%>
+    <%= link_to "マイページへ", mypage_user_path(current_user), class:"button_while" %>
   <% else %>
-    <%= link_to "もどる", user_path(@user.id) , class:"button_while"%>
+    <%= link_to "もどる", user_path(@user.id), class:"button_while"%>
   <%end %>
   <%= paginate @pictures %>
 </div>

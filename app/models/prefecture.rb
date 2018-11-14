@@ -12,10 +12,4 @@ class Prefecture < ApplicationRecord
       long.to_s,
       params: {units: 'si'})['daily']['icon']
   end
-
-  # def today_temperature_high
-  #   lat.to_s,
-  #   long.to_s,
-  #   params: {units: 'si'})['daily']['temperatureHigh']
-  # end
 end
