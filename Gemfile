@@ -21,6 +21,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'forecast_io'
 gem 'jp_prefecture'
 gem 'rails-i18n', '~> 5.1'
+gem 'pg', '>= 0.18', '< 2.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
