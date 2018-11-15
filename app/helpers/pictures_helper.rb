@@ -41,4 +41,15 @@ module PicturesHelper
     else @current_temperature = 6
     end
   end
+
+  def picture_temperure(weather)
+    case weather
+    when (1) then @temperature = "26℃以上"
+    when (2) then @temperature = "21~25℃"
+    when (3) then @temperature = "16~20℃"
+    when (4) then @temperature = "12~15℃"
+    when (5) then @temperature = "7~11℃"
+    else @temperature = "6℃以下"
+    end
+  end
 end
