@@ -25,8 +25,8 @@ module PicturesHelper
     when (26..Float::INFINITY) then @weather_description = "暑い！まだまだ半袖が活躍"
     when (21..25.99) then @weather_description = "快適！半袖と長袖の分かれ目"
     when (16..20.99) then @weather_description = "やや肌寒い！重ね着が楽しめる時期"
-    when (12..15.99) then @weather_description = "寒さがじわじわ！軽めのアウターを用意して"
-    when (7..11.99) then @weather_description = "もう寒い！厚手のコートで出かけよう"
+    when (12..15.99) then @weather_description = "寒さがじわじわ！軽めのアウターを用意しよう"
+    when (7..11.99) then @weather_description = "今日は寒い！厚手のコートで出かけよう"
       else @weather_description = "凍える寒さ！防寒対策は万全に"
     end
   end
@@ -44,11 +44,11 @@ module PicturesHelper
 
   def picture_temperure(weather)
     case weather
-    when (1) then @temperature = "26℃以上"
-    when (2) then @temperature = "21~25℃"
-    when (3) then @temperature = "16~20℃"
-    when (4) then @temperature = "12~15℃"
-    when (5) then @temperature = "7~11℃"
+    when 1 then @temperature = "26℃以上"
+    when 2 then @temperature = "21~25℃"
+    when 3 then @temperature = "16~20℃"
+    when 4 then @temperature = "12~15℃"
+    when 5 then @temperature = "7~11℃"
     else @temperature = "6℃以下"
     end
   end
