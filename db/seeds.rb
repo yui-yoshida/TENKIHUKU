@@ -61,7 +61,7 @@ pref_to_lat_long = {
 pref_to_lat_long.each do |key, value|
  Prefecture.create(
    name: key,
-   lat: value[:lat],
-   long: value[:long]
+   latitude: value[:lat],
+   longitude: value[:long]
  )
 end
