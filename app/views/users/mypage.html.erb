@@ -27,7 +27,7 @@
 
       <% pictures.each do |picture| %>
         <div>
-          <%= link_to image_tag(picture.image.url, :width => "100"), picture_path(picture.id) %>
+          <%= link_to image_tag(picture.image.url, width: "100"), picture_path(picture.id) %>
         </div>
       <% end %>
     <% end %>

@@ -5,6 +5,7 @@ ja:
       user: "ユーザー"
     attributes:
       blog:
+        image: "画像"
         title: "タイトル"
         content: "内容"
       contact:
@@ -16,7 +17,12 @@ ja:
         name: "名前"
         email: "メールアドレス"
         content: "内容"
+        image: "画像"
         current_password: "現在のパスワード"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        rain: "雨"
+      picture:
+        image: "画像"
+        content: "内容"
