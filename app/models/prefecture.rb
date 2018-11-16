@@ -10,6 +10,6 @@ class Prefecture < ApplicationRecord
     ForecastIO.forecast(
       lat.to_s,
       long.to_s,
-      params: {units: 'si'})['daily']['icon']
+      params: {units: 'si'})['daily']['data'][0]['icon']
   end
 end
