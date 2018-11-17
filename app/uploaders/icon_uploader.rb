@@ -1,6 +1,6 @@
 class IconUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  storage :file
+  storage :fog
   process :resize_to_limit => [80, 80]
 
   version :thumb_circle do
