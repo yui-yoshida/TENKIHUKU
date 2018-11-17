@@ -1,15 +1,34 @@
 class Prefecture < ApplicationRecord
   def current_temperature
-    ForecastIO.forecast(
-      latitude,
-      longitude,
-      params: {units: 'si'})['currently']['apparentTemperature']
+    forecast['currently']['apparentTemperature']
   end
 
   def today_weather
-    ForecastIO.forecast(
+    daily_data['icon']
+  end
+
+  def temperature_high
+    daily_data['temperatureHigh']
+  end
+
+  def temperature_low
+    daily_data['temperatureLow']
+  end
+
+  def rain_possibility
+    daily_data['precipProbability']*100
+  end
+
+  private
+
+  def forecast
+    @forecast ||= ForecastIO.forecast(
       latitude,
       longitude,
-      params: {units: 'si'})['daily']['data'][0]['icon']
+      params: {units: 'si'})
+  end
+
+  def daily_data
+    forecast['daily']['data'][0]
   end
 end

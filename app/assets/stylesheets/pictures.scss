@@ -26,3 +26,24 @@
 .white {
   color: white;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.between_weathwe {
+  padding-right: 4%;
+}
+
+.weather_top {
+  padding-top: 25px;
+}
+
+.weather_font {
+  font-size: 18px;
+}
+
+.under {
+  background: linear-gradient(transparent 70%, #a8eaff 70%);
+  }

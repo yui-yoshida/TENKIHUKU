@@ -1,15 +1,20 @@
 <div class = "center">
   <h1 class = "title">今日の天気</h1>
   <div class = "container">
-
+<div class = "between_weathwe">
     <%= weather_icon(@weather) %>
+      <h3><%= @weather %></h3>
+  </div>
+    <div>
+      <p class = "weather_top weather_font">体感温度：<%= @apparent_temperature %>℃</p>
+      <p class = "weather_font">最高気温：<%= @temperature_high %>℃</p>
+      <p class = "weather_font">最低気温：<%= @temperature_low %>℃</p>
+      <p class = "weather_font">降水確率：<%= @rain_possibility %>%</p>
+    </div>
+  </div>
+    <h4><span class = "under"><%= weather_description(@apparent_temperature) %></span></h4>
 
-    <h3><%= @weather %></h3>
-    <%= @temperature_high %>
-    <p>体感温度：<%= @apparent_temperature %></p>
-    <%= weather_description(@apparent_temperature) %>
-
-    <h2 class = "title">今日のTENKIIHUKU一覧</h2>
+    <h2 class = "title">今日のTENKIHUKU一覧</h2>
     <% @pictures.each do |picture| %>
     <% current_pictures(@apparent_temperature) %>
       <% if current_user.gender == picture.user.gender && @current_temperature == picture.weather %>
@@ -19,8 +24,7 @@
       </div>
       <% end %>
     <% end %>
-  </div>
   <%= paginate @pictures %>
   <br>
-  <%= link_to 'TENKIHUKUを投稿する', new_picture_path,class:"button_while" %>
+  <%= link_to 'TENKIHUKUを投稿する', new_picture_path, class:"button_while" %>
 </div>
