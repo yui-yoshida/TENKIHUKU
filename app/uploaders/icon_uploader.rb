@@ -1,7 +1,6 @@
 class IconUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process :resize_to_limit => [80, 80]
-
   version :thumb_circle do
     process :crop_to_circle
   end
@@ -16,9 +15,9 @@ end
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  if Rails.env == "production"
+  if Rails.env == 'production'
     storage :fog
   else
-    storage :file
+    storage :file  
   end
 end
