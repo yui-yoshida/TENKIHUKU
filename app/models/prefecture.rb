@@ -25,7 +25,7 @@ class Prefecture < ApplicationRecord
     @forecast ||= ForecastIO.forecast(
       latitude,
       longitude,
-      params: {units: 'si'})
+      params: { units: 'si', lang: 'ja' })
   end
 
   def daily_data

@@ -3,10 +3,10 @@
   <div class = "container">
 <div class = "between_weathwe">
     <%= weather_icon(@weather) %>
-      <h3><%= @weather %></h3>
+      <h3><%= weather_japanese(@weather) %></h3>
   </div>
     <div>
-      <p class = "weather_top weather_font">体感温度：<%= @apparent_temperature.round %>℃</p>
+      <p class = "weather_top weather_font">体感気温：<%= @apparent_temperature.round %>℃</p>
       <p class = "weather_font">最高気温：<%= @temperature_high.round %>℃</p>
       <p class = "weather_font">最低気温：<%= @temperature_low.round %>℃</p>
       <p class = "weather_font">降水確率：<%= @rain_possibility.round %>%</p>

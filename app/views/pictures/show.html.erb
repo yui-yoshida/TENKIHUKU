@@ -14,7 +14,7 @@
   <p class = "button-top-padding"><%= image_tag @picture.image.url %></p>
   <p><%= @picture.content %></p>
   <p><%= "投稿日：#{@picture.created_at.strftime('%Y/%m/%d')}" %></p>
-  <p><%= "体感温度:#{picture_temperure(@picture.weather)}" %></p>
+  <p><%= "体感気温：#{picture_temperure(@picture.weather)}" %></p>
   <% unless @picture.user_id == current_user.id %>
     <% if @favorite.present? %>
       <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'white_button' %>
