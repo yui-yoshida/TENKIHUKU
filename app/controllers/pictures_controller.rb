@@ -30,11 +30,11 @@ before_action :user_check, only: [:edit, :destroy]
 
   def index
     @prefecture = Prefecture.find(current_user.prefecture_code.to_s)
-    @apparent_temperature = @prefecture.current_temperature.round
+    @apparent_temperature = @prefecture.current_temperature
     @weather = @prefecture.today_weather
-    @temperature_high = @prefecture.temperature_high.round
-    @temperature_low = @prefecture.temperature_low.round
-    @rain_possibility = @prefecture.rain_possibility.round
+    @temperature_high = @prefecture.temperature_high
+    @temperature_low = @prefecture.temperature_low
+    @rain_possibility = @prefecture.rain_possibility
     @pictures = Picture.all
     @pictures = Picture.page(params[:page]).per(20).order('created_at DESC')
   end

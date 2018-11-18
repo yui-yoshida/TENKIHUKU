@@ -27,4 +27,10 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :icon, :gender, :prefecture_code])
     end
 
+    def set_locale
+   if ["ja", "en"].include?(cookies[:locale])
+     I18n.locale = cookies[:locale]
+   end
+ end
+
 end

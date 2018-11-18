@@ -6,10 +6,10 @@
       <h3><%= @weather %></h3>
   </div>
     <div>
-      <p class = "weather_top weather_font">体感温度：<%= @apparent_temperature %>℃</p>
-      <p class = "weather_font">最高気温：<%= @temperature_high %>℃</p>
-      <p class = "weather_font">最低気温：<%= @temperature_low %>℃</p>
-      <p class = "weather_font">降水確率：<%= @rain_possibility %>%</p>
+      <p class = "weather_top weather_font">体感温度：<%= @apparent_temperature.round %>℃</p>
+      <p class = "weather_font">最高気温：<%= @temperature_high.round %>℃</p>
+      <p class = "weather_font">最低気温：<%= @temperature_low.round %>℃</p>
+      <p class = "weather_font">降水確率：<%= @rain_possibility.round %>%</p>
     </div>
   </div>
     <h4><span class = "under"><%= weather_description(@apparent_temperature) %></span></h4>
