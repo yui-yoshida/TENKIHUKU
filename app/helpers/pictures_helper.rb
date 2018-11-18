@@ -9,14 +9,14 @@ module PicturesHelper
 
   def weather_icon(weather)
     case weather
-      when "clear-day" || "clear-night" then image_tag "clear-day.jpeg"
-      when "rain" then image_tag "rain.jpeg"
-      when "snow" then image_tag "snow.jpeg"
-      when "sleed" then image_tag "sleed.jpeg"
-      when "wind" then image_tag "wind.jpeg"
-      when "fog" then image_tag "fog.jpeg"
-      when "cloudy" then image_tag "cloudy.jpeg"
-      else image_tag "sunny_cloudy.jpeg"
+    when "clear-day" || "clear-night" then image_tag "clear-day.jpeg"
+    when "rain" then image_tag "rain.jpeg"
+    when "snow" then image_tag "snow.jpeg"
+    when "sleed" then image_tag "sleed.jpeg"
+    when "wind" then image_tag "wind.jpeg"
+    when "fog" then image_tag "fog.jpeg"
+    when "cloudy" then image_tag "cloudy.jpeg"
+    else image_tag "sunny_cloudy.jpeg"
     end
   end
 
@@ -40,7 +40,7 @@ module PicturesHelper
     when (16..20.99) then @weather_description = "やや肌寒い！重ね着が楽しめる時期"
     when (12..15.99) then @weather_description = "寒さがじわじわ！軽めのアウターを用意しよう"
     when (7..11.99) then @weather_description = "今日は寒い！厚手のコートで出かけよう"
-      else @weather_description = "凍える寒さ！防寒対策は万全に"
+    else @weather_description = "凍える寒さ！防寒対策は万全に"
     end
   end
 
