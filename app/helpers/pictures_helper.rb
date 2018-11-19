@@ -23,11 +23,11 @@ module PicturesHelper
   def weather_japanese(weather)
     case weather
     when "clear-day" || "clear-night" then @weather = "晴れ"
-    when "rain" then image_tag @weather = "雨"
-    when "snow" then image_tag @weather = "雪"
-    when "sleed" then image_tag @weather = "みぞれ"
-    when "wind" then image_tag @weather = "強風"
-    when "fog" then image_tag @weather = "霧"
+    when "rain" then @weather = "雨"
+    when "snow" then @weather = "雪"
+    when "sleed" then @weather = "みぞれ"
+    when "wind" then @weather = "強風"
+    when "fog" then @weather = "霧"
     when "cloudy" then image_tag @weather = "くもり"
     else @weather = "晴れ時々くもり"
     end
