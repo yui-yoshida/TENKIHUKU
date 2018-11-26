@@ -28,7 +28,7 @@ module PicturesHelper
     when "sleed" then @weather = "みぞれ"
     when "wind" then @weather = "強風"
     when "fog" then @weather = "霧"
-    when "cloudy" then image_tag @weather = "くもり"
+    when "cloudy" then @weather = "くもり"
     else @weather = "晴れ時々くもり"
     end
   end
