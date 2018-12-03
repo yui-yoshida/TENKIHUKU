@@ -11,7 +11,6 @@
 <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
   <div class="image_file">
     <%= form.label :image %>
-    <%= image_tag(@picture.image.url) if @picture.image.url %>
     <%= form.file_field :image %>
   </div>
   <div class="TENKIHUKU_content">
