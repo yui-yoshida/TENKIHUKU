@@ -1,16 +1,13 @@
-<%= form_with(model: @blog, local: true) do |form| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
-      <ul>
-        <% @picture.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @picture.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
-
 <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
   <div class="image_file">
     <%= form.label :image %>

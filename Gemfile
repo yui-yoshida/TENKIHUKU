@@ -9,7 +9,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'letter_opener_web'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'mini_magick'
@@ -24,7 +23,6 @@ gem 'rails-i18n', '~> 5.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'fog-aws'
 gem 'fog'
-gem 'dotenv-rails'
 gem "aws-sdk-s3",'< 2.0', require: false
 
 group :development, :test do
