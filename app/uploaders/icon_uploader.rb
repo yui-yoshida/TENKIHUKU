@@ -16,7 +16,7 @@ end
   end
 
   if Rails.env == 'production'
-    storage :file
+    storage :fog
   else
     storage :file
   end

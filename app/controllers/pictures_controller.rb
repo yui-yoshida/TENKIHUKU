@@ -45,7 +45,6 @@ before_action :user_check, only: [:edit, :destroy]
 
 
   def update
-
     if @picture.update(picture_params)
       redirect_to picture_path(@picture.id), notice:"TENKIHUKUを編集しました"
     else

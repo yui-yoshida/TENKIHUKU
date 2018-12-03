@@ -4,11 +4,9 @@
     <title>TENKIHUKU</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <header>
       <%= link_to image_tag("/assets/logo.png"), root_path , class:"logo" %>
@@ -28,10 +26,8 @@
   <% if alert %>
     <p class="alert alert-error"><%= alert %></p>
   <% end %>
-
     <%= yield %>
   </body>
-
   <footer>
     <%= link_to image_tag("/assets/logo.png"), root_path %>
     <p>© 2015-2018 Copyright Yoppi Corp.</p>
