@@ -22,7 +22,6 @@ gem 'jp_prefecture'
 gem 'rails-i18n', '~> 5.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'fog-aws'
-gem 'fog'
 gem "aws-sdk-s3",'< 2.0', require: false
 
 group :development, :test do
