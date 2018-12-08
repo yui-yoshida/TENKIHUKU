@@ -5,21 +5,24 @@ before_action :user_check, only: [:edit, :destroy]
 
 
   def new
-    if params[:back]
-      @picture = Picture.new(picture_params)
-    else
+    # if params[:back]
+        # Refile.store = Refile::S3.new(prefix: "store", **aws)
+      # @picture = Picture.new(picture_params)
+    # else
       @picture = Picture.new
-    end
+    # end
   end
 
   def create
     prefecture = Prefecture.find(current_user.prefecture_code.to_s)
     apparent_temperature = prefecture.current_temperature
     @picture = current_user.pictures.build(picture_params)
+    # @picture = Picture.new(picture_params)
+
     @picture.setting_weather_status(apparent_temperature)
     @picture.setting_start_time
     if @picture.save
-      redirect_to pictures_path,notice: "TENKIHUKUを作成しました"
+      redirect_to pictures_path, notice: "TENKIHUKUを作成しました"
     else
       render "new"
     end
@@ -66,7 +69,7 @@ before_action :user_check, only: [:edit, :destroy]
   private
 
   def picture_params
-    params.require(:picture).permit(:content, :image, :image_cache, :start_time)
+    params.require(:picture).permit(:content, :image, :image_cache_id, :start_time)
   end
 
   def set_picture

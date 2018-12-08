@@ -10,6 +10,8 @@ class Picture < ApplicationRecord
 
   enum gender: { man:1, woman:2 }
 
+  attachment :image, type: :image
+
   def setting_weather_status(temperature)
     case temperature
     when (26..Float::INFINITY) then self.weather = 1

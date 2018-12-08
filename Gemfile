@@ -11,7 +11,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
-gem 'mini_magick'
 gem 'kaminari'
 gem 'momentjs-rails'
 gem 'jquery-rails'
@@ -22,7 +21,11 @@ gem 'jp_prefecture'
 gem 'rails-i18n', '~> 5.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'fog-aws'
-gem "aws-sdk-s3",'< 2.0', require: false
+# gem "aws-sdk-s3",'< 2.0', require: false
+gem 'refile', require: 'refile/rails', github: 'refile/refile'
+gem 'refile-mini_magick', github: 'refile/refile-mini_magick', branch: 'master'
+gem "refile-s3"
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

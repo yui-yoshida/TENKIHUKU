@@ -1,9 +1,7 @@
 <div class = "center">
-
 <h3 class = "title">以下の内容で送信する</h3>
-
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
-  <%= image_tag(@picture.image.url) %>
+  <%= image_tag attachment_url(@picture, :image) %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :start_time %>
@@ -17,5 +15,4 @@
   <%= form.hidden_field :start_time %>
   <%= form.submit "戻る", name: "back" %>
 <% end %>
-
 </div>
