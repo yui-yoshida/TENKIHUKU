@@ -13,13 +13,12 @@
     </div>
   </div>
     <h4><span class = "under"><%= weather_description(@apparent_temperature) %></span></h4>
-
     <h2 class = "title">今日のTENKIHUKU一覧</h2>
     <% @pictures.each do |picture| %>
     <% current_pictures(@apparent_temperature) %>
       <% if current_user.gender == picture.user.gender && @current_temperature == picture.weather %>
       <div class="panel-body">
-        <%= link_to image_tag attachment_url(picture, :image), picture_path(picture.id), class:"item" %>
+        <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %>
         <br>
       </div>
       <% end %>

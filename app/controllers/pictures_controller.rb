@@ -3,22 +3,14 @@ before_action :set_picture, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!, :only => [:new, :create, :edit, :show, :update, :destroy, :confirm, :index]
 before_action :user_check, only: [:edit, :destroy]
 
-
   def new
-    # if params[:back]
-        # Refile.store = Refile::S3.new(prefix: "store", **aws)
-      # @picture = Picture.new(picture_params)
-    # else
       @picture = Picture.new
-    # end
   end
 
   def create
     prefecture = Prefecture.find(current_user.prefecture_code.to_s)
     apparent_temperature = prefecture.current_temperature
     @picture = current_user.pictures.build(picture_params)
-    # @picture = Picture.new(picture_params)
-
     @picture.setting_weather_status(apparent_temperature)
     @picture.setting_start_time
     if @picture.save
@@ -46,7 +38,6 @@ before_action :user_check, only: [:edit, :destroy]
     @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
-
   def update
     if @picture.update(picture_params)
       redirect_to picture_path(@picture.id), notice:"TENKIHUKUを編集しました"
@@ -60,16 +51,10 @@ before_action :user_check, only: [:edit, :destroy]
     redirect_to pictures_path, notice:"TENKIHUKUを削除しました"
   end
 
-  def confirm
-    @picture = Picture.new(picture_params)
-    @picture.user_id = current_user.id
-    render :new if @picture.invalid?
-  end
-
   private
 
   def picture_params
-    params.require(:picture).permit(:content, :image, :image_cache_id, :start_time)
+    params.require(:picture).permit(:content, :image, :start_time)
   end
 
   def set_picture
@@ -82,5 +67,4 @@ before_action :user_check, only: [:edit, :destroy]
       redirect_to pictures_path, notice:"投稿者以外は編集できません"
     end
   end
-
 end

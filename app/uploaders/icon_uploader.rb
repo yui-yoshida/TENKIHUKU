@@ -9,8 +9,5 @@ class IconUploader < CarrierWave::Uploader::Base
       img.crop "152x152+164+15"
   end
 end
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
-  # storage :fog
+  storage :fog
 end

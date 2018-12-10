@@ -21,11 +21,8 @@ gem 'jp_prefecture'
 gem 'rails-i18n', '~> 5.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'fog-aws'
-# gem "aws-sdk-s3",'< 2.0', require: false
-gem 'refile', require: 'refile/rails', github: 'refile/refile'
-gem 'refile-mini_magick', github: 'refile/refile-mini_magick', branch: 'master'
-gem "refile-s3"
-
+gem "aws-sdk-s3",'< 2.0', require: false
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
