@@ -1,0 +1,29 @@
+<div class = "center">
+  <h1 class = "title">明日の天気<span class = "prefecture_name_size">(<%= @prefecture.name %>)</span></h1>
+  <div class = "container">
+    <div class = "between_weathwe">
+    <%= weather_icon(@weather) %>
+      <p class = "weather_font"><%= weather_japanese(@weather) %></p>
+    </div>
+    <div>
+      <p class = "weather_top weather_font">体感気温：<%= @apparent_temperature.round %>℃</p>
+      <p class = "weather_font">最高気温：<%= @temperature_high.round %>℃</p>
+      <p class = "weather_font">最低気温：<%= @temperature_low.round %>℃</p>
+      <p class = "weather_font">降水確率：<%= @rain_possibility.round %>%</p>
+    </div>
+  </div>
+    <h4><span class = "under"><%= weather_description(@apparent_temperature) %></span></h4>
+    <h2 class = "title">明日のTENKIHUKU一覧</h2>
+    <% @pictures.each do |picture| %>
+    <% current_pictures(@apparent_temperature) %>
+      <% if current_user.gender == picture.user.gender && @current_temperature == picture.weather %>
+      <div class="panel-body">
+        <%= link_to image_tag(picture.image.url) ,picture_path(picture.id),class:"item" %>
+        <br>
+      </div>
+      <% end %>
+    <% end %>
+  <%= paginate @pictures %>
+  <br>
+  <%= link_to 'TENKIHUKUを投稿する', new_picture_path, class:"button_while" %>
+</div>
