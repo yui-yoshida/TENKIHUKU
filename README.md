@@ -1,4 +1,5 @@
 # TENKIHUKU
+https://secure-plains-71845.herokuapp.com/
 
 ## 概要
 
