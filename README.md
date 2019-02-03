@@ -9,6 +9,7 @@ https://secure-plains-71845.herokuapp.com/
 ## コンセプト
 
 今日の天気によりどのような洋服を着ていくかが分かる
+コーディネート日記帳
 
 ## バージョン
 
@@ -75,6 +76,7 @@ https://cacoo.com/diagrams/e48F4vlDgh1b0kcC/19F68
 
   binding_of_caller
 
-  momentjs-rails
-
-  fullcalendar-rails
+  jp_prefecture
+  
+  simple_calendar
+  
